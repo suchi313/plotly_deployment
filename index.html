@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .jumbotron {
+      background-image: url("static/images/biobg.PNG");
+      background-size: cover;
+    }
+</style>
 </head>
 <body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center"  >
+        <h1> <strong>
+          Belly Button Biodiversity Dashboard
+        </strong></h1>
+        <p><strong>Use the interactive charts below to explore the dataset</strong></p>
+      </div>
+    </div>
+    <div class= "row">
+      <div class = "col-md-12">
+        <p>Aside from there being many bacterial species in our belly buttons that are unknown to mankind as of yet, some of the bacteria found have proteins that can synthesize and taste like beef.  The charts below are the findings of a microbiologist who is studying the various bacteria within belly buttons, searching for the one that could change the artificial meat industry forever.  The microbiologist started by analyzing the types and amounts of bacteria cultures found per sample in realtion to how many times the belly button is typically washed.  Then, they were able to identify the top ten bacteria cutlures found per sample.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="bar"></div>
+    </div>
+    <div class="col-md-6">
+      <div id="gauge"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="js/charts.js"></script>
+
 </body>
+
 </html>
